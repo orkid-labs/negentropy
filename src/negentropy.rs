@@ -61,6 +61,7 @@ impl Negentropy {
     /// `D_KL(p || q) = Σ p_i × log₂(p_i / q_i)`
     ///
     /// This is the fundamental identity: Negentropy = Information = D_KL.
+    /// If any p_i > 0 with q_i == 0, the divergence is +∞ (infinite information gain).
     pub fn kl_divergence(informed: &[f64], uninformed: &[f64]) -> Self {
         assert_eq!(
             informed.len(),
@@ -68,16 +69,26 @@ impl Negentropy {
             "distributions must have same length"
         );
 
+        let mut infinite = false;
         let kl: f64 = informed
             .iter()
             .zip(uninformed.iter())
-            .filter(|(&p, &q)| p > 0.0 && q > 0.0)
-            .map(|(&p, &q)| p * (p / q).log2())
+            .map(|(&p, &q)| {
+                if p > 0.0 && q == 0.0 {
+                    infinite = true;
+                    0.0
+                } else if p > 0.0 && q > 0.0 {
+                    p * (p / q).log2()
+                } else {
+                    0.0
+                }
+            })
             .sum();
 
+        let value = if infinite { f64::INFINITY } else { kl };
         Self {
-            value: kl,
-            source: format!("D_KL(informed || uninformed) = {:.4} bits", kl),
+            value,
+            source: format!("D_KL(informed || uninformed) = {:.4} bits", value),
         }
     }
 
@@ -133,6 +144,13 @@ mod tests {
         // Informed distribution is concentrated, uninformed is uniform
         let neg = Negentropy::kl_divergence(&[0.99, 0.01], &[0.5, 0.5]);
         assert!(neg.bits() > 0.5); // significant information
+    }
+
+    #[test]
+    fn test_kl_divergence_infinite_when_q_zero() {
+        // If informed assigns probability where uninformed has none, KL is +∞
+        let neg = Negentropy::kl_divergence(&[0.9, 0.1], &[0.5, 0.0]);
+        assert!(neg.bits().is_infinite());
     }
 
     #[test]

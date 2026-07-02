@@ -90,12 +90,12 @@ impl RoutePotential {
     /// `energy = confidence × √(depth_ratio × timing_factor) × latency_decay × (1 − cost_penalty)`
     pub fn energy(&self) -> RouteEnergyResult {
         let latency_decay = 1.0 / (1.0 + self.latency_ms as f64 * 0.0001);
-        let cost_penalty = (self.cost_usd * self.cost_normalization).min(0.5);
+        let cost_penalty = (self.cost_usd * self.cost_normalization).clamp(0.0, 1.0);
 
         let energy = self.confidence
             * (self.depth_ratio * self.timing_factor).sqrt()
             * latency_decay
-            * (1.0 - cost_penalty).max(0.0);
+            * (1.0 - cost_penalty).clamp(0.0, 1.0);
 
         RouteEnergyResult {
             energy,
@@ -130,7 +130,7 @@ impl RouteEnergy {
         let energy = confidence
             * (depth_ratio * timing_factor).sqrt()
             * latency_decay
-            * (1.0 - cost_penalty).max(0.0);
+            * (1.0 - cost_penalty.clamp(0.0, 1.0)).clamp(0.0, 1.0);
 
         RouteEnergyResult {
             energy,
@@ -138,13 +138,14 @@ impl RouteEnergy {
             depth_ratio,
             timing_factor,
             latency_decay,
-            cost_penalty,
+            cost_penalty: cost_penalty.clamp(0.0, 1.0),
         }
     }
 
     /// Compute route energy with timing decay from age.
     ///
     /// `timing_factor = exp(−age / half_life)`
+    /// Panics if `half_life_secs` is not positive; callers must validate inputs.
     pub fn with_decay(
         confidence: f64,
         depth_ratio: f64,
@@ -154,9 +155,13 @@ impl RouteEnergy {
         cost_usd: f64,
         cost_normalization: f64,
     ) -> RouteEnergyResult {
+        assert!(
+            half_life_secs.is_finite() && half_life_secs > 0.0,
+            "half_life_secs must be positive and finite"
+        );
         let timing_factor = (-age_secs / half_life_secs).exp();
         let latency_decay = 1.0 / (1.0 + latency_ms as f64 * 0.0001);
-        let cost_penalty = (cost_usd * cost_normalization).min(0.5);
+        let cost_penalty = (cost_usd * cost_normalization).clamp(0.0, 1.0);
 
         Self::new(
             confidence,

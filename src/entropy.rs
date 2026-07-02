@@ -60,13 +60,16 @@ impl Entropy {
         }
 
         assert!(
-            (sum - 1.0).abs() < 0.01,
+            (sum - 1.0).abs() < 1e-9,
             "probabilities must sum to 1.0, got {}",
             sum
         );
 
+        // Normalize to avoid tiny floating-point drift affecting downstream scoring.
+        let normalized_h = if sum != 0.0 { h / sum } else { h };
+
         Self {
-            value: h,
+            value: normalized_h,
             n_states: probs.len(),
         }
     }
