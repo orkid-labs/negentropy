@@ -127,6 +127,25 @@ impl RouteEnergy {
         latency_decay: f64,
         cost_penalty: f64,
     ) -> RouteEnergyResult {
+        // Validate inputs: all factors must be finite and non-negative
+        // (negative values would produce NaN via sqrt, or nonsensical energy)
+        assert!(
+            confidence.is_finite() && confidence >= 0.0,
+            "confidence must be finite and non-negative"
+        );
+        assert!(
+            depth_ratio.is_finite() && depth_ratio >= 0.0,
+            "depth_ratio must be finite and non-negative"
+        );
+        assert!(
+            timing_factor.is_finite() && timing_factor >= 0.0,
+            "timing_factor must be finite and non-negative"
+        );
+        assert!(
+            latency_decay.is_finite() && latency_decay >= 0.0,
+            "latency_decay must be finite and non-negative"
+        );
+
         let energy = confidence
             * (depth_ratio * timing_factor).sqrt()
             * latency_decay

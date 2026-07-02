@@ -133,9 +133,13 @@ impl Committor {
     ///
     /// `committor = (depth / (1 + depth)) × timing × (1 − cost × 0.5)`
     pub fn score(depth_ratio: f64, timing_factor: f64, cost_penalty: f64) -> f64 {
+        // Validate inputs
+        assert!(depth_ratio.is_finite() && depth_ratio >= 0.0, "depth_ratio must be non-negative");
+        assert!(timing_factor.is_finite() && timing_factor >= 0.0, "timing_factor must be non-negative");
+        let cost = cost_penalty.clamp(0.0, 1.0);
         (depth_ratio / (1.0 + depth_ratio))
             * timing_factor
-            * (1.0 - cost_penalty * 0.5).clamp(0.0, 1.0)
+            * (1.0 - cost * 0.5).clamp(0.0, 1.0)
     }
 }
 

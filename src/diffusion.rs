@@ -129,6 +129,7 @@ impl GraphLaplacian {
 
     /// Access element `(i, j)` of the Laplacian.
     pub fn at(&self, i: usize, j: usize) -> f64 {
+        assert!(i < self.n && j < self.n, "GraphLaplacian::at: index out of bounds");
         self.matrix[i * self.n + j]
     }
 }
