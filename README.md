@@ -17,7 +17,7 @@ information reduces entropy. Extracted and generalized from the
 > **Note:** The orkid repository is private. Access can be provided to
 > Thrive Protocol reviewers and other appropriate cases on request —
 > contact [Orkid Labs](https://www.orkidlabs.com). The theoretical
-> foundation is published as a peer-reviewed preprint:
+> foundation is published as a preprint:
 > ["Negative EV per Unit Time as Blockchain Inefficiency"](https://www.researchgate.net/publication/399474539_Negative_EV_per_Unit_Time_as_Blockchain_Inefficiency)
 > — [Jacob Cavazos, ResearchGate](https://www.researchgate.net/profile/Jacob-Cavazos).
 
@@ -262,7 +262,7 @@ of the same negentropy scoring, deploying on Horizen Base L3.
 `negentropy` was extracted and generalized from the
 [orkid FMD physics engine](https://github.com/jjcav84/orkid/tree/main/fmd-physics)
 (private repo — access available for reviewers on request). The
-theoretical foundation is published as a peer-reviewed preprint:
+theoretical foundation is published as a preprint:
 ["Negative EV per Unit Time as Blockchain Inefficiency"](https://www.researchgate.net/publication/399474539_Negative_EV_per_Unit_Time_as_Blockchain_Inefficiency)
 by [Jacob Cavazos](https://www.researchgate.net/profile/Jacob-Cavazos).
 The route scoring methodology is documented in the [orkid blog series](https://www.orkidlabs.com/blog/).
@@ -301,7 +301,7 @@ This is not a standalone grant application. It is the shared dependency that eve
 | Horizen Boost (#39) | horizen-age | Scores age proof quality on Horizen L3 |
 | Horizen Boost (#39) | horizen-attest | Scores attestation proof quality on Horizen L3 |
 
-**Origin:** The FMD route scoring engine in `orkid/fmd-physics` (private repo — access available for reviewers on request) scores arbitrage routes by their thermodynamic energy — `energy = confidence × √(depth_ratio × timing_factor) × latency_decay × (1 − cost_penalty)`. The same physics generalizes to any system where information reduces entropy. A ZK proof eliminates uncertainty the same way an arbitrage route eliminates market inefficiency. The math is identical; the application domain changes. The theoretical foundation is published as a peer-reviewed preprint: ["Negative EV per Unit Time as Blockchain Inefficiency"](https://www.researchgate.net/publication/399474539_Negative_EV_per_Unit_Time_as_Blockchain_Inefficiency) by [Jacob Cavazos](https://www.researchgate.net/profile/Jacob-Cavazos). Route scoring methodology is documented in the [orkid blog series](https://www.orkidlabs.com/blog/): [Blockchain Thermodynamics](https://www.orkidlabs.com/blog/blockchain-thermodynamics-negentropy-mev-physics/), [Negentropy = Information](https://www.orkidlabs.com/blog/negentropy-information-generalized-framework/), [Formal Negentropy Model](https://www.orkidlabs.com/blog/formal-negentropy-model-mev-dynamics-graph-diffusion/), and [Complex Microstructure and Route Scoring](https://www.orkidlabs.com/blog/complex-microstructure-route-scoring-defi/).
+**Origin:** The FMD route scoring engine in `orkid/fmd-physics` (private repo — access available for reviewers on request) scores arbitrage routes by their thermodynamic energy — `energy = confidence × √(depth_ratio × timing_factor) × latency_decay × (1 − cost_penalty)`. The same physics generalizes to any system where information reduces entropy. A ZK proof eliminates uncertainty the same way an arbitrage route eliminates market inefficiency. The math is identical; the application domain changes. The theoretical foundation is published as a preprint: ["Negative EV per Unit Time as Blockchain Inefficiency"](https://www.researchgate.net/publication/399474539_Negative_EV_per_Unit_Time_as_Blockchain_Inefficiency) by [Jacob Cavazos](https://www.researchgate.net/profile/Jacob-Cavazos). Route scoring methodology is documented in the [orkid blog series](https://www.orkidlabs.com/blog/): [Blockchain Thermodynamics](https://www.orkidlabs.com/blog/blockchain-thermodynamics-negentropy-mev-physics/), [Negentropy = Information](https://www.orkidlabs.com/blog/negentropy-information-generalized-framework/), [Formal Negentropy Model](https://www.orkidlabs.com/blog/formal-negentropy-model-mev-dynamics-graph-diffusion/), and [Complex Microstructure and Route Scoring](https://www.orkidlabs.com/blog/complex-microstructure-route-scoring-defi/).
 
 **Proposal to Thrive:** Adopt negentropy as a universal proof quality metric across Thrive grant programs. Every ZK project in the Thrive ecosystem gets scored on the same thermodynamic scale — `N = constraints × log₂(anonymity_set)` bits of negentropy extracted. This gives Guardians a deterministic, physics-based metric for evaluating ZK proof quality across all programs, rather than subjective rubrics. The engine is battle-tested in production MEV route scoring; applying it to ZK proof scoring is a domain transfer, not a research project.
 
