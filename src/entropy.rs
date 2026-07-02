@@ -65,11 +65,10 @@ impl Entropy {
             sum
         );
 
-        // Normalize to avoid tiny floating-point drift affecting downstream scoring.
-        let normalized_h = if sum != 0.0 { h / sum } else { h };
-
+        // Sum is already validated to be ~1.0 (within 1e-9), so no normalization needed.
+        // Dividing by sum would amplify floating-point errors when sum ≈ 1.0.
         Self {
-            value: normalized_h,
+            value: h,
             n_states: probs.len(),
         }
     }
