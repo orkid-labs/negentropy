@@ -85,7 +85,7 @@ The engine was generalized from the Orkid FMD (Financial Molecular Dynamics) phy
 
 ## 2. The Domain-Specific Formula (Negbit, July 2026)
 
-In July 2026, ag3ntlab-ai published "Pricing Negentropy: A Quotation Model for Pre-Processed Context Bundles in Machine-to-Machine Knowledge Markets" (Nicolas Limare, ag3ntlab, v1.0, July 2026). The repository was created on GitHub on July 5, 2026 — five days after the Orkid negentropy repository was made public, and eight months after Orkid's framework blog posts were published.
+In July 2026, ag3ntlab-ai published <a href="https://negbit.com/paper" rel="nofollow">"Pricing Negentropy: A Quotation Model for Pre-Processed Context Bundles in Machine-to-Machine Knowledge Markets"</a> (Nicolas Limare, ag3ntlab, v1.0, July 2026). The repository was created on GitHub on July 5, 2026 — five days after the Orkid negentropy repository was made public, and eight months after Orkid's framework blog posts were published.
 
 The Negbit formula prices a knowledge bundle of $S$ tokens, age $a$ days, in a domain with half-life $t_{1/2}$:
 
@@ -229,7 +229,7 @@ The general → specific direction works. The specific → general direction doe
 | November 6, 2025 | Orkid publishes "Negentropy = Information: A Generalized Mathematical Framework" |
 | November 6, 2025 | Orkid publishes "The Thermodynamic Balance of Global Networks" |
 | June 30, 2026 | Orkid publishes negentropy Rust repo at github.com/orkid-labs/negentropy |
-| **July 5, 2026** | **Negbit repo created at github.com/ag3ntlab-ai/negbit (5 days after Orkid's repo, 8 months after Orkid's blog posts)** |
+| **July 5, 2026** | **Negbit repo created at <a href="https://github.com/ag3ntlab-ai/negbit" rel="nofollow">github.com/ag3ntlab-ai/negbit</a> (5 days after Orkid's repo, 8 months after Orkid's blog posts)** |
 | July 5, 2026 | Negbit paper published (v1.0, July 2026) |
 
 The Negbit paper's reference section cites 25 sources, including Brillouin [11], Landauer [12], Shannon (via Sims [8]), and Bennett [15] — the same foundational principles Orkid's framework unifies. The paper does not cite any of Orkid's five published blog posts, the ResearchGate preprint, or the public GitHub repository.
@@ -293,7 +293,7 @@ Orkid's negentropy engine is a production Rust crate deployed as a dependency in
 5. Orkid Labs, "The Thermodynamic Balance of Global Networks," orkidlabs.com/blog/thermodynamic-balance-global-networks-comprehensive, November 6, 2025.
 6. Orkid Labs, negentropy (Rust crate), github.com/orkid-labs/negentropy, MIT License, created June 30, 2026.
 7. J. Cavazos, "Negative EV per Unit Time as Blockchain Inefficiency," ResearchGate preprint, 2025.
-8. N. Limare, "Pricing Negentropy: A Quotation Model for Pre-Processed Context Bundles in Machine-to-Machine Knowledge Markets," ag3ntlab, v1.0, July 2026. negbit.com/paper
+8. N. Limare, "Pricing Negentropy: A Quotation Model for Pre-Processed Context Bundles in Machine-to-Machine Knowledge Markets," ag3ntlab, v1.0, July 2026. <a href="https://negbit.com/paper" rel="nofollow">negbit.com/paper</a>
 9. C. E. Shannon, "A Mathematical Theory of Communication," Bell System Technical Journal, 27(3), 379–423, 1948.
 10. L. Boltzmann, "Über die Beziehung zwischen dem zweiten Hauptsatze der mechanischen Wärmetheorie und der Wahrscheinlichkeitsrechnung," Wiener Berichte, 76, 373–435, 1877.
 11. R. Landauer, "Irreversibility and Heat Generation in the Computing Process," IBM Journal of Research and Development, 5(3), 183–191, 1961.
