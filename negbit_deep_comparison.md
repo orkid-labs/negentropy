@@ -1,8 +1,8 @@
 # Negbit vs Orkid Negentropy: Deep File-Level Comparison
 
-**Orkid Labs** — September 5, 2026
+**Orkid Labs** — September 6, 2026 (revised)
 
-**Purpose:** A file-level, term-level, and citation-level comparison between the Negbit specification (ag3ntlab-ai, July 2026) and the Orkid negentropy framework (October 2025 – June 2026). This is an analytical comparison, not proof of copying or direct derivation. The derivation analysis (published separately as `DERIVATION.md`) shows that Negbit's formula *can* be derived as a specialization of Orkid's framework; this document examines whether there is also textual, structural, or code-level evidence of direct influence.
+**Purpose:** A file-level, term-level, and citation-level comparison between the Negbit specification (ag3ntlab-ai, July 2026) and the Orkid negentropy framework (October 2025 – June 2026). This is an analytical comparison, not proof of copying or direct derivation. The derivation analysis (published separately as `DERIVATION.md`) shows that Negbit's formula *can* be mathematically mapped to Orkid's framework; this document examines whether there is also textual, structural, or code-level evidence of direct influence, and critically, whether Negbit has its own independent derivation path.
 
 ---
 
@@ -122,6 +122,50 @@ Negbit cites 25 references. Of these, 19 are economics/information-market papers
 
 ---
 
+## 3a. Negbit's Own Derivation Path (Critical Finding)
+
+**This is the most important finding of this comparison.** Negbit's paper (negbit.com/paper) contains a complete, independently-cited derivation of its formula through **economics and information-economics literature** — not through Orkid's physics framework. The paper does not merely state the formula; it derives it step by step from named, cited sources in the economics tradition.
+
+### Negbit's actual derivation (paper §3.1–§3.7)
+
+| Step | Negbit's derivation | Cited source | Orkid counterpart |
+|---|---|---|---|
+| §3.1: Information density | `ΔI = H₀ − H*` — standard information theory notation for task-relevant information | Standard Shannon (not cited as novel) | Orkid's Central Theorem (same Shannon foundation) |
+| §3.2: Make-or-buy problem | `P_max` derived from buyer's cost of DIY research vs buying a bundle | Stigler (1961) [4], Shapiro & Varian (1999) [6] — **economics** | Orkid's Landauer Corollary (physics) |
+| §3.3: Information-theoretic skeleton | `c_in · ΔI · (1/d_raw − 1/d_B)` — derived from rational inattention theory | Sims (2003) [8] — "the buyer's λ, in this market, is its metered processing cost" | Orkid's Landauer with economic substitution |
+| §3.4: Value-side cap | `ΔEVSI` cap — decision-theoretic value of information | Howard (1966) [1], Raiffa & Schlaifer (1961) [2], Bergemann et al. (2018) [13] | Orkid's Theorem 2.1 |
+| §3.5: Temporal decay | `2^(−t/t½)` — information rents erode as information diffuses | Grossman & Stiglitz (1980) [7] — **"the mechanism behind our decay term"** | Orkid's Entropy Production Theorem |
+| §3.6: Seller amortization | Batch vs real-time pricing spread | Provider pricing pages (empirical) | Not in Orkid |
+| §3.7: Nash bargaining | `β · P_ceiling` — bilateral trade surplus split | Nash (1950) [21] | Not in Orkid (acknowledged) |
+
+### Negbit's explicit treatment of Brillouin/Landauer
+
+Negbit's paper §2, under "Thermodynamics of computation," states explicitly:
+
+> "Szilard [10], Brillouin [11], Landauer [12], and Bennett [15] establish the physical floor: acquiring or erasing one bit costs at least kT ln 2 ≈ 2.87 × 10⁻²¹ J at 300 K. **We use this only to locate the market**: the economic cost of extracting one useful bit from the raw web with 2026 LLMs exceeds the physical floor by roughly twenty-five orders of magnitude (§5.3)."
+
+Negbit does **not** derive its formula from Brillouin or Landauer. It uses them only to establish that a gap exists between the physical cost of information extraction (~10⁻²⁹ dollars) and the economic cost (~10⁻⁴ dollars). The formula itself is derived from economics: Stigler's search theory, Sims' rational inattention, Grossman-Stiglitz's information diffusion, Howard/Raiffa's EVSI, and Nash's bargaining solution.
+
+### What this means
+
+1. **The mathematical mapping in DERIVATION.md is valid** — Negbit's formula CAN be mapped to Orkid's theorems. Both works use the same underlying information theory (Shannon, Brillouin, Landauer).
+
+2. **But Negbit has its own complete derivation path** through a different literature (economics). The formula does not require Orkid's framework to derive. It requires Stigler, Sims, Grossman-Stiglitz, Howard, Raiffa, and Nash — all of which Negbit cites.
+
+3. **The mathematical equivalence is a consequence of shared foundations**, not evidence of one deriving from the other. Both works specialize the same foundational physics (Brillouin, Landauer, Shannon) into different domains using different intermediate literatures:
+   - Orkid: physics → generalized framework → blockchain/ZK/MEV applications
+   - Negbit: physics (as context only) → economics literature → AI agent market pricing
+
+4. **The "AI-mediated synthesis from Orkid" inference is substantially weakened.** Negbit's paper has a clear, independently-cited derivation path that does not require Orkid's work at all. The fact that the formulas are mathematically mappable is equally consistent with:
+   - Independent derivation from shared foundational physics through different literatures
+   - AI-mediated synthesis from Orkid's framework
+   - AI-mediated synthesis from the economics literature directly
+   - Some combination of the above
+
+   The repository evidence alone cannot distinguish between these explanations.
+
+---
+
 ## 4. Terminology Comparison
 
 | Term | Orkid | Negbit | Notes |
@@ -219,34 +263,36 @@ A search for exact phrase overlap (>3 words) between the two repositories found:
 ### What can be stated with evidence
 
 1. **Priority:** Orkid's framework was published first (October 2025 blog posts, June 2026 repo). Negbit was published July 5, 2026.
-2. **Conceptual derivability:** Negbit's formula can be derived as a specialization of Orkid's framework (shown in `DERIVATION.md`). Every term except β maps to an Orkid theorem.
-3. **Shared foundations:** Both works cite Brillouin (1953) and Landauer (1961). These are canonical references for any negentropy-based framework.
-4. **No code overlap:** Negbit has no source code. There is nothing to compare at the code level.
-5. **No textual overlap:** Beyond canonical paper titles in references, there is no shared text between the repositories.
-6. **No shared terminology:** "Phoenix Cycle" is Orkid-specific. "Knowledge bundle," "refinement ratio," and "half-life taxonomy" are Negbit-specific.
-7. **AI-assisted authorship:** Negbit's commit is co-authored with "Claude Fable 5." This is disclosed in the commit metadata.
-8. **No citation of Orkid:** Negbit's 25 references do not include any Orkid work (blog posts, repo, or preprint).
-9. **Different domains:** Orkid scores information extraction across multiple domains (ZK, MEV, voting, attestations). Negbit prices knowledge bundles for AI agent markets.
-10. **Different literature:** Orkid's foundation is physics (Shannon, Boltzmann, Landauer, Brillouin). Negbit's foundation is physics (Brillouin, Landauer) + economics (19 additional references).
+2. **Mathematical mappability:** Negbit's formula can be mathematically mapped to Orkid's framework (shown in `DERIVATION.md`). Every term except β has an Orkid counterpart.
+3. **Negbit has its own derivation path:** Negbit's paper derives its formula through economics literature (Stigler, Sims, Grossman-Stiglitz, Howard, Raiffa, Nash), not through Orkid's physics framework. Negbit explicitly uses Brillouin/Landauer only to "locate the market," not as the basis of its formula.
+4. **Shared foundations:** Both works are grounded in Brillouin (1953) and Landauer (1961) — canonical references for any negentropy-based framework, not unique to either work.
+5. **No code overlap:** Negbit has no source code. There is nothing to compare at the code level.
+6. **No textual overlap:** Beyond canonical paper titles in references, there is no shared text between the repositories.
+7. **No shared terminology:** "Phoenix Cycle" is Orkid-specific. "Knowledge bundle," "refinement ratio," and "half-life taxonomy" are Negbit-specific.
+8. **AI-assisted authorship:** Negbit's commit is co-authored with "Claude Fable 5." This is disclosed in the commit metadata.
+9. **No citation of Orkid:** Negbit's 25 references do not include any Orkid work (blog posts, repo, or preprint).
+10. **Different domains:** Orkid scores information extraction across multiple domains (ZK, MEV, voting, attestations). Negbit prices knowledge bundles for AI agent markets.
+11. **Different intermediate literatures:** Orkid's derivation path is physics (Shannon, Boltzmann, Landauer, Brillouin) → generalized framework. Negbit's derivation path is economics (Stigler, Sims, Grossman-Stiglitz, Howard, Raiffa, Nash) → pricing formula. Both share the same foundational physics as context, but neither derives from the other.
 
 ### What cannot be stated with evidence
 
 1. **Direct copying:** There is no textual, code, or structural evidence of direct copying. The repositories share no text beyond canonical references.
-2. **AI-mediated synthesis from Orkid's work:** While the commit metadata shows AI assistance, and the formula is derivable from Orkid's framework, there is no direct evidence that the AI model was given or retrieved Orkid's work as input. The AI model may have independently arrived at the same specialization of Brillouin/Landauer.
-3. **Awareness of Orkid's work:** Negbit does not cite Orkid. Whether the author or the AI model was aware of Orkid's published work cannot be determined from the repository alone.
-4. **Independent derivation:** Cannot be proven either. The fact that Negbit's formula is a clean specialization of Orkid's framework, combined with the 8-month gap and AI assistance, is consistent with AI-mediated synthesis — but also consistent with independent derivation from shared foundations.
+2. **That Negbit derived from Orkid:** Negbit has its own complete, cited derivation path through economics. The mathematical mapping to Orkid's framework is valid but does not establish a causal derivation relationship. Both works independently specialize the same foundational physics.
+3. **AI-mediated synthesis from Orkid's work:** While the commit metadata shows AI assistance, Negbit's paper has a complete derivation through economics literature that does not require Orkid's work. Whether the AI model also accessed Orkid's work during synthesis cannot be determined from the repository evidence.
+4. **Awareness of Orkid's work:** Negbit does not cite Orkid. Whether the author or the AI model was aware of Orkid's published work cannot be determined from the repository alone.
+5. **Independent derivation as the sole explanation:** While Negbit's economics-based derivation is complete and cited, the 8-month gap after Orkid's blog posts and the mathematical mappability are also consistent with Orkid's work having some influence on the synthesis — perhaps as one of many sources the AI model accessed.
 
 ### Conclusion
 
 The evidence supports the following statements:
 
 - **Orkid has priority** as the first published generalized negentropy framework (October 2025).
-- **Negbit's formula is derivable** from Orkid's framework, as shown in `DERIVATION.md`.
+- **The formulas are mathematically equivalent** in the sense that Negbit's formula can be mapped to Orkid's theorems. Both specialize the same foundational physics (Shannon, Brillouin, Landauer).
+- **Negbit has its own independent derivation path** through economics literature (Stigler, Sims, Grossman-Stiglitz, Howard, Raiffa, Nash). The formula does not require Orkid's framework to derive.
 - **No direct copying** of text, code, or proprietary terminology is evident.
-- **AI-assisted authorship** is disclosed in Negbit's commit metadata.
-- **The connection is structural** (shared physics foundations, derivable formula), not textual (no copied content).
+- **The relationship is convergent specialization** — both works independently apply the same foundational physics to different domains (Orkid → blockchain/ZK/MEV, Negbit → AI agent markets) using different intermediate literatures (Orkid → physics, Negbit → economics).
 
-The derivation analysis published in `DERIVATION.md` establishes that Negbit's formula *can* be derived from Orkid's framework. This deep comparison establishes that there is *no evidence of direct textual or code-level copying*. The relationship is best described as **conceptual derivation from shared foundational physics**, potentially mediated by AI synthesis, but this cannot be proven from the repository evidence alone.
+The mathematical mapping in `DERIVATION.md` is valid as a structural observation: the formulas ARE mappable. But the mapping should not be presented as a causal derivation chain (Negbit derived from Orkid) when Negbit has its own complete, cited derivation through a different literature. The correct framing is: **both works independently specialize the same foundational physics into different domains, producing mathematically mappable formulas through different derivation paths.**
 
 ---
 
@@ -255,10 +301,11 @@ The derivation analysis published in `DERIVATION.md` establishes that Negbit's f
 The deep comparison strengthens the provenance/priority section of the valuation memo by:
 
 1. **Confirming priority:** Orkid published first, by 8 months (blog) and 6 days (repo).
-2. **Confirming derivability:** The formula mapping is clean (all terms except β).
-3. **Ruling out code copying:** Negbit has no code — the comparison is purely conceptual.
-4. **Ruling out text copying:** No shared text beyond canonical references.
-5. **Establishing the nature of the influence:** If any, it is AI-mediated conceptual synthesis, not direct copying.
-6. **Qualifying the claim:** The memo should say "derivable from" (mathematical fact), not "derived from" (implies proven causal chain). The memo should say "consistent with AI-mediated synthesis" (observational), not "proven AI-mediated synthesis" (not provable from repo evidence).
+2. **Confirming mathematical mappability:** The formula mapping is clean (all terms except β).
+3. **Establishing that Negbit has its own derivation path:** Negbit's paper derives its formula through economics literature, not physics. This is a critical fact that must be stated alongside the mathematical mapping.
+4. **Ruling out code copying:** Negbit has no code — the comparison is purely conceptual.
+5. **Ruling out text copying:** No shared text beyond canonical references.
+6. **Reframing the relationship:** The correct framing is "convergent specialization of shared foundational physics" — both works independently apply Brillouin/Landauer/Shannon to different domains through different literatures.
+7. **Qualifying the claim:** The memo should say "mathematically mappable to" (structural fact), not "derived from" (implies causal chain). The memo should not infer AI-mediated synthesis from Orkid as the explanation when Negbit has its own complete derivation path.
 
-The valuation memo's provenance section has been updated to use this qualified language.
+The valuation memo's provenance section has been updated to reflect this more precise and defensible framing.

@@ -1,4 +1,4 @@
-# Deriving Domain-Specific Negentropy Pricing from a Generalized Framework
+# Mathematical Mapping: Negbit Pricing and the Orkid Negentropy Framework
 
 **Orkid Labs** — September 2026
 
@@ -13,7 +13,7 @@
 
 ## Abstract
 
-We show that domain-specific negentropy pricing formulas — including the Negbit quotation model for AI agent knowledge bundles (Limare, ag3ntlab, July 2026) — can be derived as direct specializations of the generalized negentropy framework published by Orkid Labs in October–November 2025. We perform the derivation step by step, showing that every term in the Negbit formula maps to a theorem in the Orkid framework. The only term not present in the Orkid framework is a Nash bargaining split (β), which is a game-theoretic overlay, not a physics result. We discuss the implications for priority, provenance, and the role of AI-assisted synthesis in propagating generalized frameworks into domain-specific applications.
+We show that the Negbit quotation model for AI agent knowledge bundles (Limare, ag3ntlab, July 2026) is mathematically mappable to the generalized negentropy framework published by Orkid Labs in October–November 2025: every term in the Negbit formula except the Nash bargaining split (β) corresponds to a theorem in the Orkid framework. However, Negbit's paper also contains its own complete, independently-cited derivation path through economics literature (Stigler, Sims, Grossman-Stiglitz, Howard, Raiffa, Nash), not through Orkid's physics framework. The mathematical mapping is valid as a structural observation, but it does not establish a causal derivation chain. The correct framing is that both works independently specialize the same foundational physics (Shannon, Brillouin, Landauer) into different domains through different intermediate literatures. We discuss the implications for priority and the distinction between mathematical mappability and causal derivation.
 
 ---
 
@@ -238,37 +238,54 @@ The Negbit repository's single commit message reads: "spec: The Negbit Spec v1.0
 
 ---
 
-## 7. On AI-Assisted Synthesis
+## 7. Negbit's Own Derivation Path
 
-The commit metadata indicates the Negbit spec was co-authored with an AI model. This is consistent with the following mechanism:
+**Critical context:** Negbit's paper (negbit.com/paper) contains a complete, independently-cited derivation of its formula through **economics literature**, not through Orkid's physics framework. The paper does not merely state the formula — it derives it step by step:
 
-1. A person has a product idea: "sell knowledge bundles to AI agents, need a pricing formula."
-2. The person asks an AI: "what's a physics or mathematical based way to derive a pricing formula for information?"
-3. The AI performs web search in July 2026 and finds:
-   - Orkid's blog posts (indexed since October–November 2025, 8 months of search engine indexing)
-   - Orkid's GitHub repo (public since June 30, 2026, 5 days prior)
-   - Foundational papers (Brillouin 1953, Landauer 1961, Shannon 1948, Sims 2003)
-4. The AI synthesizes: takes Orkid's generalized framework, specializes it to knowledge bundles, denominates in dollars instead of bits, adds a Nash bargaining split.
-5. The AI produces a well-formulated paper citing the canonical foundational sources (Brillouin, Landauer, Shannon, Sims) but not Orkid's intermediate synthesis work — because AI models synthesize from multiple sources and present concepts as derived from first principles, citing original canonical references rather than intermediate work.
-6. The person publishes the AI-generated spec and paper.
+| Step | Negbit's derivation | Cited source |
+|---|---|---|
+| §3.1: Information density | `ΔI = H₀ − H*` — standard information theory | Shannon (via standard notation) |
+| §3.2: Make-or-buy | `P_max` from buyer's DIY cost vs buying | Stigler (1961), Shapiro & Varian (1999) |
+| §3.3: Info-theoretic skeleton | `c_in · ΔI · (1/d_raw − 1/d_B)` from rational inattention | Sims (2003) — "the buyer's λ is its metered processing cost" |
+| §3.4: Value cap | `ΔEVSI` cap | Howard (1966), Raiffa & Schlaifer (1961), Bergemann et al. (2018) |
+| §3.5: Temporal decay | `2^(−t/t½)` from information diffusion | Grossman & Stiglitz (1980) — "the mechanism behind our decay term" |
+| §3.7: Bargaining | `β · P_ceiling` | Nash (1950) |
 
-Under this mechanism, the person may not be aware that Orkid's published work was used by the AI during synthesis. The AI did what AI models do: it searched, found relevant content, synthesized, and produced output. The fact that Orkid's work was the intermediate synthesis layer is invisible to both the AI and the person who published the result.
+Negbit's paper explicitly states about Brillouin and Landauer: **"We use this only to locate the market"** — the thermodynamic references establish the gap between physical cost (~10⁻²⁹ dollars) and economic cost (~10⁻⁴ dollars), but the formula itself is derived from economics, not physics.
 
-We do not assert that this mechanism is what happened. We assert only that:
-- The derivation is mathematically valid (§3)
-- The timeline is consistent (§6)
+### What this means for the mapping
+
+The mathematical mapping in §3–§4 of this document is valid: the formulas ARE structurally mappable. But the mapping should not be presented as a causal derivation chain (Negbit derived from Orkid) when:
+
+1. Negbit has its own complete, cited derivation through economics literature
+2. Negbit explicitly uses Brillouin/Landauer only as market context, not as the basis of its formula
+3. The economics literature (Stigler, Sims, Grossman-Stiglitz, Howard, Raiffa) provides an independent path to the same formula structure
+
+### On AI-assisted authorship
+
+The commit metadata indicates AI assistance ("Co-Authored-By: Claude Fable 5"). This is consistent with several explanations:
+
+1. **Independent AI-assisted derivation from economics:** The AI model derived the formula from the economics literature that Negbit cites, without accessing Orkid's work.
+2. **AI-mediated synthesis from multiple sources including Orkid:** The AI model found Orkid's work via web search AND the economics literature, synthesizing from both.
+3. **AI-assisted derivation from Orkid only:** The AI model found Orkid's work and specialized it, with the economics citations added as post-hoc justification.
+
+The repository evidence cannot distinguish between these explanations. Negbit's complete economics-based derivation makes explanation (1) fully consistent with the evidence — the formula does not require Orkid's framework to derive. The 8-month gap after Orkid's blog posts makes explanation (2) possible but unprovable. Explanation (3) is the weakest given Negbit's complete cited derivation path.
+
+We assert only that:
+- The mathematical mapping is valid (§3–§4)
+- The timeline is consistent with but does not prove influence (§6)
 - The commit metadata indicates AI assistance (§6)
-- The person's public profile shows no prior work in information theory, thermodynamics, or mathematical physics
+- Negbit has its own complete derivation path through economics literature (this section)
 
 ---
 
 ## 8. Implications
 
-### 8.1 Orkid's framework is the generalized primitive
+### 8.1 Orkid's framework is the generalized primitive; Negbit is one convergent specialization
 
-Negbit is one domain-specific application of Orkid's negentropy framework. As more people ask AI models "how do I price/score X using physics or information theory?", and AI models find Orkid's published work in their search indices, more domain-specific applications will appear — each derived from Orkid's framework, each citing the foundational principles (Brillouin, Landauer, Shannon) but not the intermediate synthesis work (Orkid).
+Orkid's framework is the first published generalized negentropy scoring framework (October 2025). Negbit is a domain-specific pricing formula (July 2026) that is mathematically mappable to Orkid's framework but has its own independent derivation path through economics literature. Both works specialize the same foundational physics (Shannon, Brillouin, Landauer) into different domains through different intermediate literatures.
 
-Orkid's framework becomes the canonical intermediate source that AI models synthesize from — invisible in citations, but structurally present in every derived formula. This is a new form of intellectual influence: **AI-mediated derivation**, where a published framework propagates into domain-specific applications through AI synthesis, without direct human citation.
+This is **convergent specialization**: two independent works applying the same foundational principles to different domains, producing mathematically mappable formulas through different derivation paths. Orkid's priority as the first published generalized framework is established by the publication record. Whether Negbit's formula was influenced by Orkid's published work during AI-assisted synthesis cannot be determined from the repository evidence — and it does not need to be. Priority is established by publication date, not by proving that later works derived from the earlier one.
 
 ### 8.2 The scoring primitive vs. the pricing application
 
