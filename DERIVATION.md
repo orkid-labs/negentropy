@@ -263,19 +263,24 @@ The mathematical mapping in §3–§4 of this document is valid: the formulas AR
 
 ### On AI-assisted authorship
 
-The commit metadata indicates AI assistance ("Co-Authored-By: Claude Fable 5"). This is consistent with several explanations:
+The commit metadata indicates AI assistance ("Co-Authored-By: Claude Fable 5"). The listed author is a product manager, not an economist or physicist. The derivation through Stigler, Sims, Grossman-Stiglitz, Howard, Raiffa, and Nash — spanning information economics, rational inattention theory, decision theory, and game theory — was produced by the AI model, not by the human author from first principles. The human's role was to define the problem (pricing knowledge bundles for AI agent markets); the AI model produced the formula and the derivation.
 
-1. **Independent AI-assisted derivation from economics:** The AI model derived the formula from the economics literature that Negbit cites, without accessing Orkid's work.
-2. **AI-mediated synthesis from multiple sources including Orkid:** The AI model found Orkid's work via web search AND the economics literature, synthesizing from both.
+This reframes the provenance question. The question is not whether a product manager independently derived a negentropy pricing formula from either economics literature or Orkid's physics framework. The question is what sources the AI model accessed during synthesis. The AI model had access to the public internet, where Orkid's blog posts (October 2025), ResearchGate preprint (2025), and public GitHub repository (June 2026) had been indexed for 8 months prior to Negbit's publication (July 2026). AI models routinely retrieve and synthesize from web-accessible sources during generation.
+
+This is consistent with several explanations:
+
+1. **Independent AI-assisted derivation from economics:** The AI model derived the formula from the economics literature it was prompted with, without retrieving Orkid's work.
+2. **AI-mediated synthesis from multiple sources including Orkid:** The AI model retrieved Orkid's published work via web search AND the economics literature, synthesizing from both.
 3. **AI-assisted derivation from Orkid only:** The AI model found Orkid's work and specialized it, with the economics citations added as post-hoc justification.
 
-The repository evidence cannot distinguish between these explanations. Negbit's complete economics-based derivation makes explanation (1) fully consistent with the evidence — the formula does not require Orkid's framework to derive. The 8-month gap after Orkid's blog posts makes explanation (2) possible but unprovable. Explanation (3) is the weakest given Negbit's complete cited derivation path.
+The repository evidence cannot distinguish between these explanations. Negbit's complete economics-based derivation makes explanation (1) fully consistent with the evidence — the formula does not require Orkid's framework to derive. The 8-month gap after Orkid's blog posts and the AI model's access to the public internet make explanation (2) plausible. Explanation (3) is the weakest given Negbit's complete cited derivation path.
 
 We assert only that:
 - The mathematical mapping is valid (§3–§4)
 - The timeline is consistent with but does not prove influence (§6)
-- The commit metadata indicates AI assistance (§6)
-- Negbit has its own complete derivation path through economics literature (this section)
+- The commit metadata indicates AI assistance, and the human author is a product manager, not an economist (§6)
+- The derivation was AI-produced; the question is what sources the AI accessed, not whether the human independently derived it
+- Negbit has its own complete cited derivation path through economics literature (this section)
 
 ---
 
