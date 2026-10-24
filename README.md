@@ -314,3 +314,18 @@ systems. See our other work at [orkidlabs.com](https://www.orkidlabs.com).
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+## Part of Orkid Labs
+
+**negentropy** — The physics of information extraction — a thermodynamic engine for scoring any system where information reduces entropy.
+
+- Install: `cargo install orkid-negentropy`
+- Package: https://crates.io/crates/orkid-negentropy
+- API docs: https://docs.rs/orkid-negentropy
+- Docs: https://docs.orkidlabs.xyz/packages/negentropy
+
+Related Orkid projects: [zenkinetic](https://github.com/orkid-labs/zenkinetic), [horizen-attest](https://github.com/orkid-labs/horizen-attest)
+
+Orkid Labs builds gasless, MEV-protected swap routing and agent-native DeFi infrastructure — [orkidlabs.xyz](https://orkidlabs.xyz) · [@orkid-labs on npm](https://www.npmjs.com/org/orkid-labs) · [github.com/orkid-labs](https://github.com/orkid-labs)
